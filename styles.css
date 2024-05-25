@@ -1,0 +1,32 @@
+
+body{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:20px
+}
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 800px;
+    border: 2px solid ;
+}
+
+#container div {
+    flex-basis: calc(100% / 16);
+    padding-bottom: calc(100% / 16);
+    height: 0;
+    background-color: gray;
+    box-sizing: border-box;
+    border: 1px solid white;
+}
+
+.grid-item {
+    transition:opacity 0.6s ease; /* Smooth transition for color change and opacity */
+}
+.grid-item:hover {
+    opacity: 0.5; /* Decrease opacity on hover */
+}
