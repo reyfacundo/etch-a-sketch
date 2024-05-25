@@ -7,10 +7,10 @@ function generateColor() {
         code += hexArray[Math.floor(Math.random() * 16)];
     }
     return code;
-} 
-function tileCreator(tiles){
+}
+function tileCreator(tiles) {
     if (+tiles > 100 || +tiles < 1) return alert("Can't enter numbers higher than 100 or lower than 1 !");
-    if(typeof tiles  === "number") return alert("That's not a number !")
+    if (isNaN(+tiles)) return alert("That's not a number !")
     container.innerHTML = ''
     for (let i = 0; i < (+tiles * +tiles); i++) {
         const div = document.createElement("div");
@@ -20,7 +20,7 @@ function tileCreator(tiles){
         container.appendChild(div);
         div.addEventListener("mouseover", e => {
             e.target.style.backgroundColor = generateColor();
-        }, {once : true});
+        }, { once: true });
     }
 }
 
@@ -36,7 +36,7 @@ document.querySelector('.clear').addEventListener("click", e => {
         element.style.backgroundColor = "#7da876"
         element.addEventListener("mouseover", e => {
             e.target.style.backgroundColor = generateColor();
-        }, {once : true});
+        }, { once: true });
     });
 });
 
